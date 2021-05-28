@@ -11,7 +11,11 @@
 - Resets to original position when start button is clicked / space is pressed.
 - Food added.
 - Level up added.
+- Increase in ball size when eating food.
+- Winning when score > 10.
+- Game Start message.
 
 ### To-Do:
 - Make the ball's movement smoother.
 - Add Timer.
+- Add Sounds.
