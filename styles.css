@@ -101,6 +101,11 @@ main {
   height: 40px;
 }
 
+.food {
+  width:20px;
+  height: 20px;
+}
+
 /*
 .cell:nth-child(odd) {
   background: red;
