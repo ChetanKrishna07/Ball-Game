@@ -76,14 +76,6 @@ main {
 
 .ball {
     width: 40px;
-    height:40px;
-    grid-row: 1;
-    grid-column: 1;
-    background: rgba(2, 40, 253, 0.5)
-}
-
-.ball img {
-    width: 40px;
     height: 40px;
 }
 
@@ -103,3 +95,16 @@ main {
 .column:nth-child(n) {
     grid-row: n;
 }
+
+.cell {
+  width: 40px;
+  height: 40px;
+}
+
+/*
+.cell:nth-child(odd) {
+  background: red;
+}
+.cell:nth-child(even) {
+  background: blue;
+}*/
