@@ -60,40 +60,41 @@ main {
 }
 
 .game {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .board {
-    border: 7px black dashed;
-    width: 600px;
-    height: 600px;
-    display: grid;
-    grid-template-columns: repeat(1fr, 15);
-    grid-template-rows: repeat(1fr, 15);
+  border: 7px black dashed;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 15);
+  grid-template-rows: repeat(1fr, 15);
 }
 
 .ball {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .row {
-    grid-row:1/16;
-    background: rgba(255, 0, 0, 0.5);}
+  grid-row: 1/16;
+  background: rgba(255, 0, 0, 0.5);
+}
 
 .column {
-    grid-column:1/16;
-    background: rgba(0, 0, 0, 0.5);
+  grid-column: 1/16;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .row:nth-child(n) {
-    grid-column: n;
+  grid-column: n;
 }
 
 .column:nth-child(n) {
-    grid-row: n;
+  grid-row: n;
 }
 
 .cell {
@@ -102,8 +103,16 @@ main {
 }
 
 .food {
-  width:20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food img {
+  width: 30px;
+  height: 30px;
 }
 
 /*
