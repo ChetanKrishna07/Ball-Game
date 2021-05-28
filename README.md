@@ -7,11 +7,10 @@
 - by clicking on the start button / pressing space, the game should restart.
 
 ### Progress:
-- The ball is moving with bugs.
+- The ball is moving.
+- Resets to original position when start button is clicked / space is pressed.
 
 ### To-Do:
-- Create a better grid structure for the board.
-- Make the ball move till the end of the board.
 - Make the balls movement smoother.
 - Add the item to eat.
 - Add Timer.
