@@ -1,14 +1,50 @@
 var ballposs = {
-    row: 0,
-    col: 0,
+    row: 15,
+    col: 1,
     running: 0,
-    level = 0
+    level: 1
 }
 
-var food = {
-    row = 0,
-    col = 0
+function createBoard() {
+    $(".board").html("");
+    var html = $(".board").html();
+    for(var row = 1; row < 16; row++) {
+        for(var col = 1; col < 16; col++) {
+            var cellClass = "cell " + "r" + row + "c" + col;
+             $(".board").html(html + "<div class='"+cellClass+"'></div>\n")
+             html = $(".board").html();
+             $(".r" + row + "c" + col).css("grid-row", row + "/" + (row+1));
+             $(".r" + row + "c" + col).css("grid-column", col + "/" + (col+1));
+        }
+    }
+    $(".r15c1").html("<img src='images/ball.png' alt = 'ball' class='ball' />");
+    ballposs.row = 15;
+    ballposs.col = 1;
+    ballposs.running = 1;
+    ballposs.level = 1;
+    $("heading").text("Level 1");
 }
+
+function move(frow, fcol, trow, tcol) {
+    fromClass = ".r" + frow + "c" + fcol;
+    toClass = ".r" + trow + "c" + tcol;
+    var html = $(fromClass).html();
+    console.log(fromClass)
+    $(fromClass).html("");
+    $(toClass).html(html); 
+}
+
+function pressAction(btn) {
+    $(btn).addClass("pressed");
+    setTimeout(function() {
+        $(btn).removeClass("pressed");
+    }, 100);  
+}
+
+$(".btn").click(function() { 
+    pressAction(this);
+    createBoard();
+})
 
 $(document).keydown(function(e) {
     var k = e.key;
@@ -56,40 +92,4 @@ $(document).keydown(function(e) {
             ballposs.col = col;
         }
     }
-})
-
-function createBoard() {
-    $(".board").html("");
-    var html = $(".board").html();
-    for(var row = 1; row < 16; row++) {
-        for(var col = 1; col < 16; col++) {
-            var cellClass = "cell " + "r" + row + "c" + col;
-             $(".board").html(html + "<div class='"+cellClass+"'></div>\n")
-             html = $(".board").html();
-             $(".r" + row + "c" + col).css("grid-row", row + "/" + (row+1));
-             $(".r" + row + "c" + col).css("grid-column", col + "/" + (col+1));
-        }
-    }
-    $(".r15c1").html("<img src='images/ball.png' alt = 'ball' class='ball' />");
-    ballposs.row = 15;
-    ballposs.col = 1;
-    ballposs.running = 1;
-    ballposs.level = 1;
-    $("heading").text("Level 1");
-}
-
-function move(frow, fcol, trow, tcol) {
-    fromClass = ".r" + frow + "c" + fcol;
-    toClass = ".r" + trow + "c" + tcol;
-    var html = $(fromClass).html();
-    console.log(fromClass)
-    $(fromClass).html("");
-    $(toClass).html(html); 
-}
-
-function pressAction(btn) {
-    $(btn).addClass("pressed");
-    setTimeout(function() {
-        $(btn).removeClass("pressed");
-    }, 100);  
-}
+});
