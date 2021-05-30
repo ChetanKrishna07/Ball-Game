@@ -18,7 +18,7 @@
 
 ### To-Do:
 - Make the ball's movement smoother.
-- Add Timer.
+- Added Timer.
 
 ### Website:
 https://chetankrishna07.github.io/Ball-Game/
