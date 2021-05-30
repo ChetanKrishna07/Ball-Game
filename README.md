@@ -14,11 +14,11 @@
 - Increase in ball size when eating food.
 - Winning when score > 10.
 - Game Start message.
-- Add sounds.
+- Added sounds.
 
 ### To-Do:
 - Make the ball's movement smoother.
-- Added Timer.
+- Add Timer.
 
 ### Website:
 https://chetankrishna07.github.io/Ball-Game/
