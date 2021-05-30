@@ -69,6 +69,7 @@ function move(frow, fcol, trow, tcol) {
     console.log(fromClass)
     $(fromClass).html("");
     $(toClass).html(html);
+    playSound("move");
 }
 
 function pressAction(btn) {
@@ -76,6 +77,7 @@ function pressAction(btn) {
     setTimeout(function () {
         $(btn).removeClass("pressed");
     }, 100);
+    playSound("start");
 }
 
 function playSound(sound) {
@@ -138,10 +140,12 @@ $(document).keydown(function (e) {
             $(".heading").text("Level " + ballposs.level);
             if (ballposs.level == 11) {
                 $(".heading").text("You Won!");
+                playSound("win");
                 reset();
             } else {
                 sizeUp();
                 addFood();
+                playSound("levelup");
             }
         }
     }
