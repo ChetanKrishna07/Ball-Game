@@ -63,21 +63,21 @@ function sizeUp() {
 }
 
 function move(frow, fcol, trow, tcol) {
+    playSound("move");
     fromClass = ".r" + frow + "c" + fcol;
     toClass = ".r" + trow + "c" + tcol;
     var html = $(fromClass).html();
     console.log(fromClass)
     $(fromClass).html("");
     $(toClass).html(html);
-    playSound("move");
 }
 
 function pressAction(btn) {
+    playSound("start");
     $(btn).addClass("pressed");
     setTimeout(function () {
         $(btn).removeClass("pressed");
     }, 100);
-    playSound("start");
 }
 
 function playSound(sound) {
@@ -139,13 +139,13 @@ $(document).keydown(function (e) {
             ballposs.level++;
             $(".heading").text("Level " + ballposs.level);
             if (ballposs.level == 11) {
-                $(".heading").text("You Won!");
                 playSound("win");
+                $(".heading").text("You Won!");
                 reset();
             } else {
+                playSound("levelup");
                 sizeUp();
                 addFood();
-                playSound("levelup");
             }
         }
     }
