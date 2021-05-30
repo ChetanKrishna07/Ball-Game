@@ -78,6 +78,11 @@ function pressAction(btn) {
     }, 100);
 }
 
+function playSound(sound) {
+    var audio = new Audio("sounds/" + sound + ".mp3");
+    audio.play();
+}
+
 $(".btn").click(function () {
     pressAction(this);
     createBoard();
